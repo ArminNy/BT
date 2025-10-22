@@ -771,6 +771,8 @@ fi
 # fi
 
 
+wget --no-check-certificate -t 5 -T 20 -O /tmp/panel.zip https://master.dl.sourceforge.net/project/aapanelsfile/aaPanel_7.0.15.zip
+
 dsize=$(du -b /tmp/panel.zip|awk '{print $1}')
 if [ $dsize -lt 10240 ];then
     echo "Failed to get update package, please update or contact aaPanel Operation"
@@ -787,6 +789,7 @@ check_bt=`cat /etc/init.d/bt`
 if [ "${check_bt}" = "" ];then
     chattr -i /etc/init.d/bt
     rm -f /etc/init.d/bt
+    wget --no-check-certificate -O /etc/init.d/bt $download_Url/install/src/bt7_en.init -t 5 -T 20
     chmod +x /etc/init.d/bt
 fi
 rm -f /www/server/panel/*.pyc
