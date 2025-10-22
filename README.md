@@ -2,7 +2,7 @@ AApanel Premium
 
 ## How to Run
 
-v7.0.17
+v7.0.15
 
 Run the following script on your server (ubuntu supported):
 ```
